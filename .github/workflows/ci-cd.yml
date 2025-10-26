@@ -30,7 +30,7 @@ jobs:
         IMAGE_NAME: ${{ secrets.ECR_REPO }}
       run: |
         echo "Building Docker image..."
-        docker build -t $IMAGE_NAME:latest ./webapp
+        docker build -t $IMAGE_NAME:latest .
         echo "Tagging Docker image..."
         docker tag $IMAGE_NAME:latest $ECR_REGISTRY/$IMAGE_NAME:latest
         echo "Pushing Docker image to ECR..."
